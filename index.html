@@ -12,7 +12,6 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #2c2c2c, #1e1e1e);
         }
         .card {
             background: #333; /* 深灰色背景 */
@@ -27,17 +26,6 @@
             color: #fff; /* 白色字体 */
             margin-bottom: 20px;
         }
-        .card input {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #555;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            width: calc(100% - 24px);
-            box-sizing: border-box;
-            background-color: #444;
-            color: #fff;
-        }
         .countdown {
             font-size: 48px;
             font-weight: bold;
@@ -51,7 +39,7 @@
 </head>
 <body>
     <div class="card">
-        <h1>日期倒数</h1>
+        <h1>ISPM还有</h1>
         <input type="date" id="targetDate" value="2025-05-01">
         <div id="countdown" class="countdown">请输入目标日期</div>
     </div>
