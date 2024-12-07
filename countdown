@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日期倒数卡片</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        }
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+        }
+        .card h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .card input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            width: calc(100% - 24px);
+            box-sizing: border-box;
+        }
+        .countdown {
+            font-size: 48px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-top: 10px;
+        }
+        .expired {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>日期倒数</h1>
+        <input type="date" id="targetDate" value="2024-12-31">
+        <div id="countdown" class="countdown">请输入目标日期</div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const targetDateInput = document.getElementById("targetDate");
+            const targetDate = new Date(targetDateInput.value);
+            const today = new Date();
+
+            // 计算剩余天数
+            const diffTime = targetDate - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            const countdownElement = document.getElementById("countdown");
+            if (diffTime >= 0) {
+                countdownElement.textContent = `${diffDays}天`;
+                countdownElement.classList.remove("expired");
+            } else {
+                countdownElement.textContent = "目标日期已过！";
+                countdownElement.classList.add("expired");
+            }
+        }
+
+        // 初始化事件监听
+        const targetDateInput = document.getElementById("targetDate");
+        targetDateInput.addEventListener("change", updateCountdown);
+
+        // 自动更新倒数天数
+        setInterval(updateCountdown, 1000 * 60 * 60); // 每小时更新一次
+        updateCountdown(); // 页面加载时运行一次
+    </script>
+</body>
+</html>
