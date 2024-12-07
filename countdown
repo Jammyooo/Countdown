@@ -12,45 +12,47 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            background: linear-gradient(135deg, #2c2c2c, #1e1e1e);
         }
         .card {
-            background: #fff;
+            background: #333; /* 深灰色背景 */
             border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             width: 300px;
             text-align: center;
             padding: 20px;
         }
         .card h1 {
             font-size: 24px;
-            color: #333;
+            color: #fff; /* 白色字体 */
             margin-bottom: 20px;
         }
         .card input {
             padding: 10px;
             font-size: 16px;
-            border: 1px solid #ddd;
+            border: 1px solid #555;
             border-radius: 5px;
             margin-bottom: 20px;
             width: calc(100% - 24px);
             box-sizing: border-box;
+            background-color: #444;
+            color: #fff;
         }
         .countdown {
             font-size: 48px;
             font-weight: bold;
-            color: #ffffff;
+            color: #fff; /* 白色字体 */
             margin-top: 10px;
         }
         .expired {
-            color: #888;
+            color: #888; /* 灰色字体 */
         }
     </style>
 </head>
 <body>
     <div class="card">
         <h1>日期倒数</h1>
-        <input type="date" id="targetDate" value="2024-12-31">
+        <input type="date" id="targetDate" value="2025-05-01">
         <div id="countdown" class="countdown">请输入目标日期</div>
     </div>
 
